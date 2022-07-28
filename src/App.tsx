@@ -1,15 +1,26 @@
 
 import React from 'react'
-import { Product } from './component/Product'
-import { products } from './data/products'
+import { Route, Routes } from 'react-router-dom'
+import Nav from './component/Nav'
+import About from './pages/About'
+import ProductPages from './pages/ProductPages'
+
+
 
 
 export default function App() {
-  return (
-    <div className='container mx-auto max-w-2xl pt-5'>
-       <Product product={products[0]} />
-       <Product product={products[1]} />
 
-    </div>
+ 
+
+  return (
+    <>
+     <Nav/>
+    <Routes>
+     
+      <Route path='/' element={<ProductPages/>}/>
+      <Route path='/about' element={<About/>}/>
+    </Routes>
+    </>
+ 
   )
 }
